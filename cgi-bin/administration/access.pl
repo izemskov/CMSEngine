@@ -65,7 +65,9 @@ sub StartSession {
 	# Пишем в базу
 	$DWDB->QueryDoDB(qq{INSERT INTO }.$DWDB->GetMysqlTableName().qq{cms_sessions SET sess_id=?, sess_start_time='$now_time', sess_time='$now_time', uid='-1'}, $string);	
 
-	print qq{<META HTTP-EQUIV="Set-Cookie" CONTENT="admin_session=$string; PATH=/;">};	
+	my $cookie = $DWFilter->{_CGI}->cookie(-name=>'admin_session',
+                        -value=>"$string",
+                        -path=>'/');
 }
 
 =item

@@ -25,7 +25,7 @@ yes - вывод ошибок в браузер
 file - вывод ошибок в файл
 =cut
 # Создаем класс отслеживающий ошибки
-our $DWErrors = DWErrors->new('file', $LOG_PATH, \&EndScript);
+our $DWErrors = DWErrors->new('yes', $LOG_PATH, \&EndScript);
 if ($DWErrors->GetPrintError() eq 'yes') {
 	use CGI::Carp qw(fatalsToBrowser);
 }

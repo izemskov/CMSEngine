@@ -6,9 +6,6 @@ use DWDataBase;
 use DWErrors;
 use DWFilter;
 
-print "Content-type: text/html\n\n";
-print qq{<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">};
-
 # Инициализация переменных
 our $CGIBIN_PATH = '';
 our $HTDOCS_PATH = '';
@@ -75,6 +72,8 @@ our $SUB = $DWFilter->GetParamFilterLatinDiget("sub");
 $DWDB->SetStopScript('yes');
 require "access.pl";
 $DWDB->SetStopScript('no');
+
+print qq{<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">};
 
 &CreateTokenLink;
 &GetCMSSettings;

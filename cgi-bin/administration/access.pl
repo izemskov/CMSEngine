@@ -18,10 +18,11 @@ our $MAIN_LINK;
 # Проверяем что в сессии есть только допустимые символы
 my $user_session = $DWFilter->GetCookieFilterLatinDiget("admin_session");
 my $user_token = $DWFilter->GetParamFilterLatinDiget("token");
+my $cookie = "";
 
 if ($user_session eq '') {                
     # Генерируем пользовательскую сессию
-    &StartSession; 
+    $cookie = &StartSession; 
 }
 else {
     # Проверяем есть ли запись в базе
@@ -40,8 +41,16 @@ else {
         &GetUserInfo($Content->{uid});
     }
     else {
-        &StartSession;	
+        $cookie = &StartSession;	
     }
+}
+
+if ($cookie ne "") {
+    print $DWFilter->{_CGI}->header(-cookie=>$cookie,
+                    -charset=>"utf-8");
+}
+else {
+    print "Content-type: text/html\n\n";
 }
 
 =item
@@ -49,7 +58,7 @@ else {
 =cut
 sub StartSession {
     # Генератор случайных чисел
-    &InitRand; 	
+    &InitRand;
      
     # Генерим уникальный хеш
     my $Count;
@@ -68,6 +77,8 @@ sub StartSession {
     my $cookie = $DWFilter->{_CGI}->cookie(-name=>'admin_session',
                         -value=>"$string",
                         -path=>'/');
+
+    return $cookie;
 }
 
 =item

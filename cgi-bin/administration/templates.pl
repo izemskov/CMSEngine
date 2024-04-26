@@ -24,7 +24,7 @@ sub TemplateCSS {
     my $ReturnText = '';
     
     $ReturnText .= qq{
-    <link rel="stylesheet" type="text/css" href="/css/administration/style_v3.css">
+    <link rel="stylesheet" type="text/css" href="/css/administration/style_v3.css?v=1">
     };
     
     return $ReturnText;

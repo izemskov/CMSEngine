@@ -10,7 +10,7 @@ use DWFilter;
 our $CGIBIN_PATH = '';
 our $HTDOCS_PATH = '';
 our $CGIBIN_REL_PATH = '';
-our $LOG_PATH = '';	
+our $LOG_PATH = '';
 our $SALT = '';
 
 # Получаем пути для сайта
@@ -85,18 +85,18 @@ if (($ACCESS eq 'nomod') && ($MOD eq 'logout')) {
     exit;
 }
 
-if ($ACCESS eq "yes") {	
-    require "$CGIBIN_PATH/$MOD/core.pl";	
+if ($ACCESS eq "yes") {
+    require "$CGIBIN_PATH/$MOD/core.pl";
 }
-else {	
-    if ($ACCESS eq 'no') {		
+else {
+    if ($ACCESS eq 'no') {
         my $action = $DWFilter->GetParamFilterLatinDigetDash("action");
-    
+
         if ($action eq 'login') {
             &Login;
-                        
+
             &CreateTokenLink;
-        }		
+        }
     }
 
     require "index.pl";

@@ -2,541 +2,541 @@
 
 /* ---Common tags--- */
 html,body {
-	background-color: #fcf7d0;
-	height: 100%;
-	margin: 0;
-	padding: 0;
+    background-color: #fcf7d0;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 img {
-	border: 0px;
+    border: 0px;
 }
 a {
-	color: black;
-	text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 a:hover {
-	color: black;
-	text-decoration: underline;
+    color: black;
+    text-decoration: underline;
 }
 ul.alert {
-	color: #ff0000;
-	margin-top: 0px;
+    color: #ff0000;
+    margin-top: 0px;
 }
 div.alert {
-	color: #ff0000;
+    color: #ff0000;
 }
 .invisible {
-	display: none;
+    display: none;
 }
 
 #header {
-	position: relative;
-	left: 0px;
-	top: 0px;
-	min-height: 70px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    min-height: 70px;
 }
 #footer {
-	position: relative;
-	left: 0px;
-	top: 0px;
-	min-height: 70px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    min-height: 70px;
 }
 
 /* ---Main --- */
 #main {
-	position: relative;
-	left: 50%;
-	margin-left: -480px;
-	width: 960px;
-	background-color: white;
-	min-height: 684px;
+    position: relative;
+    left: 50%;
+    margin-left: -480px;
+    width: 960px;
+    background-color: white;
+    min-height: 684px;
 }
 
 #main_header {
-	position: relative;
-	left: 0px;
-	top: 0px;
-	height: 50px;
-	background-color: #8b9c00;
-	width: 960px;
+    position: relative;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    background-color: #8b9c00;
+    width: 960px;
 
-	z-index: 10;
+    z-index: 10;
 }
 #main_content {
-	font-family: Verdana;
-	font-size: 13px;
-	color: black;
-	font-weight: normal;
-	padding-left: 15px;
-	padding-top: 15px;
-	padding-right: 15px;
-	padding-bottom: 15px;
+    font-family: Verdana;
+    font-size: 13px;
+    color: black;
+    font-weight: normal;
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
 
-	z-index: 5;
+    z-index: 5;
 }
 .br_clear {
-	clear: both;
+    clear: both;
 }
 
 /* ---Main Menu--- */
 #main_logo {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 179px;
-	height: 50px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 179px;
+    height: 50px;
 }
 #main_menu {
-	position: absolute;
-	top: 12px;
-	left: 189px;
+    position: absolute;
+    top: 12px;
+    left: 189px;
 }
 div.main_menu_item {
-	position: relative;
-	float: left;
-	padding-left: 8px;
-	padding-right: 8px;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	margin-left: 13px;
+    position: relative;
+    float: left;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-left: 13px;
 }
 a.main_menu_text {
-	color: white;
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 13px;
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
 }
 a:hover.main_menu_text {
-	color: white;
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 13px;
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
 }
 a.main_menu_text_nojs {
-	color: white;
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 13px;
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
 }
 a:hover.main_menu_text_nojs {
-	color: white;
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 13px;
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
+    color: white;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
 }
 div.main_menu_sub_item {
-	position: absolute;
-	left: 0px;
-	top: 20px;
-	min-width: 160px;
-	background-color: white;
-	border: 1px solid #8b9c00;
-	display: none;
+    position: absolute;
+    left: 0px;
+    top: 20px;
+    min-width: 160px;
+    background-color: white;
+    border: 1px solid #8b9c00;
+    display: none;
 }
 div.main_menu_sub_item_text {
-	position: relative;
-	background-color: white;
-	height: 23px;
-	min-width: 95px;
-	padding-left: 5px;
-	padding-right: 5px;
+    position: relative;
+    background-color: white;
+    height: 23px;
+    min-width: 95px;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 a.main_menu_sub_item_text {
-	color: #7b7a7a;
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 13px;
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
+    color: #7b7a7a;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
 }
 a:hover.main_menu_sub_item_text {
-	color: #7b7a7a;
-	font-family: Verdana;
-	font-weight: bold;
-	font-size: 13px;
-	margin: 0px;
-	padding: 0px;
-	text-decoration: none;
+    color: #7b7a7a;
+    font-family: Verdana;
+    font-weight: bold;
+    font-size: 13px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
 }
 div.main_menu_sub_item_text_active {
-	background-color: #9fad0d !important;
+    background-color: #9fad0d !important;
 }
 a.main_menu_sub_item_text_active {
-	color: white !important;
+    color: white !important;
 }
 a:hover.main_menu_sub_item_text_active {
-	color: white !important;
+    color: white !important;
 }
 
 /* ---Main Content--- */
 div.main_content_fast_ico {
-	position: relative;
-	top: 0px;
-	left: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px;
 
-	height: 100px;
+    height: 100px;
 }
 div.main_content_fast_ico_text {
-	position: relative;
-	font-weight: bold;
+    position: relative;
+    font-weight: bold;
 }
 div.main_content_fast_ico_icons {
-	position: relative;
-	top: 10px;
-	left: 0px;
-	float: left;
-	text-align: center;
-	width: 150px;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    float: left;
+    text-align: center;
+    width: 150px;
 }
 a.main_content_fast_ico_icons {
-	color: black;
-	text-decoration: none;
+    color: black;
+    text-decoration: none;
 }
 a:hover.main_content_fast_ico_icons {
-	color: black;
-	text-decoration: underline;
+    color: black;
+    text-decoration: underline;
 }
 #main_content_info_table1 {
-	position: absolute;
-	top: 65px;
-	right: 15px;
-	width: 400px;
-	height: 220px;
-	border: 1px solid #d8e298;
+    position: absolute;
+    top: 65px;
+    right: 15px;
+    width: 400px;
+    height: 220px;
+    border: 1px solid #d8e298;
 }
 #main_content_info_table2 {
-	position: absolute;
-	top: 305px;
-	right: 15px;
-	width: 400px;
-	height: 65px;
-	border: 1px solid #d8e298;
+    position: absolute;
+    top: 305px;
+    right: 15px;
+    width: 400px;
+    height: 65px;
+    border: 1px solid #d8e298;
 }
 #main_content_info_table3 {
-	position: absolute;
-	top: 400px;
-	right: 15px;
-	width: 400px;
-	height: 220px;
-	border: 1px solid #d8e298;
+    position: absolute;
+    top: 400px;
+    right: 15px;
+    width: 400px;
+    height: 220px;
+    border: 1px solid #d8e298;
 }
 .main_content_info_table_header {
-	position: relative;
-	height: 30px;
-	width: 400px;
-	top: 0px;
-	left: 0px;
-	background-color: #eaf0cb;
+    position: relative;
+    height: 30px;
+    width: 400px;
+    top: 0px;
+    left: 0px;
+    background-color: #eaf0cb;
 }
 .main_content_info_table_header_text{
-	position: relative;
-	top: 0px;
-	left: 0px;
-	color: #8ea15e;
-	font-weight: bold;
-	padding-left: 15px;
-	padding-top: 5px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color: #8ea15e;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 5px;
 }
 .main_content_info_table_header_roll_up {
-	position: absolute;
-	right: 5px;
-	top: 4px;
+    position: absolute;
+    right: 5px;
+    top: 4px;
 }
 .main_content_info_table {
-	position: relative;
-	margin-left: 15px;
+    position: relative;
+    margin-left: 15px;
 }
 .main_content_info_table1 {
-	position: relative;
-	left: 15px;
-	top: 5px;
-	float: left;
+    position: relative;
+    left: 15px;
+    top: 5px;
+    float: left;
 }
 #main_content_info_table_analytics_ico {
-	position: relative;
-	left: 105px;
-	float: left;
-	height: 32px;
+    position: relative;
+    left: 105px;
+    float: left;
+    height: 32px;
 }
 #main_content_info_table_analytics_text {
-	position: relative;
-	left: 110px;
-	top: 9px;
-	float: left;
+    position: relative;
+    left: 110px;
+    top: 9px;
+    float: left;
 }
 
 /* ---Main Footer--- */
 #main_footer {
-	position: relative;
-	top: 0px;
-	height: 40px;
-	left: 50%;
-	margin-left: -480px;
-	width: 960px;
-	background-color: white;
-	border-top: 1px solid #d8e298;
+    position: relative;
+    top: 0px;
+    height: 60px;
+    left: 50%;
+    margin-left: -480px;
+    width: 960px;
+    background-color: white;
+    border-top: 1px solid #d8e298;
 }
 #main_footer_lastlogin {
-	position: absolute;
-	left: 15px;
-	top: 5px;
-	width: 665px;
-	font-family: Verdana;
-	font-size: 13px;
+    position: absolute;
+    left: 15px;
+    top: 5px;
+    width: 665px;
+    font-family: Verdana;
+    font-size: 13px;
 }
 #main_footer_copyright {
-	position: absolute;
-	top: 5px;
-	left: 685px;
-	width: 255px;
-	padding-left: 10px;
-	font-family: Verdana;
-	font-size: 13px;
+    position: absolute;
+    top: 5px;
+    left: 685px;
+    width: 255px;
+    padding-left: 10px;
+    font-family: Verdana;
+    font-size: 13px;
 }
 
 /* ---Content--- */
 .content_table {
-	background-color: #d8e298;
+    background-color: #d8e298;
 }
 .content_table_header {
-	background-color: #eaf0cb;
-	color: #8ea15e;
-	font-weight: bold;
+    background-color: #eaf0cb;
+    color: #8ea15e;
+    font-weight: bold;
 }
 .content_table_whitespace {
-	background-color: white;
+    background-color: white;
 }
 .content_table_cell_header {
-	font-weight: bold;
+    font-weight: bold;
 }
 .content_table_cell_100_percent {
-	max-width: 100%;
+    max-width: 100%;
 }
 div.content_info_table_header_text{
-	float: left;
-	position: relative;
-	top: 0px;
-	left: 0px;
-	color: #8ea15e;
-	font-weight: bold;
-	padding-left: 15px;
+    float: left;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color: #8ea15e;
+    font-weight: bold;
+    padding-left: 15px;
 }
 #main_content_add {
-	position: relative;
-	height: 32px;
+    position: relative;
+    height: 32px;
 }
 .content_add {
-	position: relative;
-	float: left;
+    position: relative;
+    float: left;
 }
 .content_add_text {
-	position: relative;
-	float: left;
-	top: 8px;
-	left: 5px;
+    position: relative;
+    float: left;
+    top: 8px;
+    left: 5px;
 }
 #main_content_show {
-	position: relative;
-	top: 10px;
+    position: relative;
+    top: 10px;
 }
 #main_sub_content_show {
-	position: relative;
-	top: 10px;
+    position: relative;
+    top: 10px;
 }
 input.content_table_field {
-	width: 100%;
-	font-family: Verdana;
-	font-size: 13px;
-	border: dashed 1px #ced791;
+    width: 100%;
+    font-family: Verdana;
+    font-size: 13px;
+    border: dashed 1px #ced791;
 }
 input.content_table_order {
-	width: 60px;
-	font-family: Verdana;
-	font-size: 13px;
-	border: dashed 1px #ced791;
+    width: 60px;
+    font-family: Verdana;
+    font-size: 13px;
+    border: dashed 1px #ced791;
 }
 .content_table_whitespace_active {
-	background-color: #f1fac3 !important;
+    background-color: #f1fac3 !important;
 }
 .content_table_whitespace_nolight {
-	background-color: white;
+    background-color: white;
 }
 .text_container_input {
-	width: 100%;
-	border: dashed 1px #ced791;
-	font-family: Verdana;
-	font-size: 13px;
+    width: 100%;
+    border: dashed 1px #ced791;
+    font-family: Verdana;
+    font-size: 13px;
 }
 .content_table_edit_name {
-	padding-left: 10px;
-	padding-right: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 .content_delete {
 }
 
 /* ---Login--- */
 #login_window {
-	position: absolute;
-	top: 232px;
-	left: 180px;
-	width: 650px;
-	height: 220px;
-	border: 1px solid #d8e298;
+    position: absolute;
+    top: 232px;
+    left: 180px;
+    width: 650px;
+    height: 220px;
+    border: 1px solid #d8e298;
 }
 #login_header {
-	position: relative;
-	height: 30px;
-	width: 650px;
-	top: 0px;
-	left: 0px;
-	background-color: #eaf0cb;
+    position: relative;
+    height: 30px;
+    width: 650px;
+    top: 0px;
+    left: 0px;
+    background-color: #eaf0cb;
 }
 #login_header_text{
-	position: relative;
-	top: 0px;
-	left: 0px;
-	color: #8ea15e;
-	font-weight: bold;
-	padding-left: 15px;
-	padding-top: 5px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    color: #8ea15e;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-top: 5px;
 }
 #login_logo {
-	position: relative;
-	width: 250px;
-	left: 0px;
-	top: 12px;
-	float: left;
+    position: relative;
+    width: 250px;
+    left: 0px;
+    top: 12px;
+    float: left;
 }
 #login_form {
-	position: relative;
-	width: 350px;
-	left: 30px;
-	float: left;
+    position: relative;
+    width: 350px;
+    left: 30px;
+    float: left;
 }
 #login_login_text {
-	position: absolute;
-	left: 0px;
-	top: 12px;
+    position: absolute;
+    left: 0px;
+    top: 12px;
 }
 div.login_login_field {
-	position: absolute;
-	left: 150px;
-	top: 8px;
+    position: absolute;
+    left: 150px;
+    top: 8px;
 }
 input.login_login_field {
-	font-family: Verdana;
-	font-size: 13px;
-	border: dashed 1px #ced791;
+    font-family: Verdana;
+    font-size: 13px;
+    border: dashed 1px #ced791;
 }
 #login_pass_text {
-	position: absolute;
-	left: 0px;
-	top: 42px;
+    position: absolute;
+    left: 0px;
+    top: 42px;
 }
 div.login_pass_field {
-	position: absolute;
-	left: 150px;
-	top: 38px;
+    position: absolute;
+    left: 150px;
+    top: 38px;
 }
 #login_captcha_text {
-	position: absolute;
-	left: 0px;
-	top: 72px;
+    position: absolute;
+    left: 0px;
+    top: 72px;
 }
 #login_captcha_img {
-	position: absolute;
-	left: 150px;
-	top: 66px;
+    position: absolute;
+    left: 150px;
+    top: 66px;
 }
 div.login_captcha_field {
-	position: absolute;
-	left: 260px;
-	top: 68px;
+    position: absolute;
+    left: 260px;
+    top: 68px;
 }
 input.login_captcha_field {
-	font-family: Verdana;
-	font-size: 13px;
-	border: dashed 1px #ced791;
-	width: 60px;
+    font-family: Verdana;
+    font-size: 13px;
+    border: dashed 1px #ced791;
+    width: 60px;
 }
 div.login_submit {
-	position: absolute;
-	left: 111px;
-	top: 102px;
+    position: absolute;
+    left: 111px;
+    top: 102px;
 }
 input.login_submit {
-	font-family: Verdana;
-	font-size: 13px;
-	color: black;
-	border: 1px solid black;
+    font-family: Verdana;
+    font-size: 13px;
+    color: black;
+    border: 1px solid black;
 }
 #login_info {
-	position: absolute;
-	left: 0px;
-	top: 152px;
+    position: absolute;
+    left: 0px;
+    top: 152px;
 }
 
 /* ---Editor--- */
 a.toolbar {
-	font-size: 13px;
+    font-size: 13px;
 }
 img.toolbar {
-	border: 1px solid black;
+    border: 1px solid black;
 }
 
 #editor_lightbox_overlay {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 90;
-	width: 100%;
-	height: 100%;
-	background-color: #000000;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
 }
 
 #editor_lightbox {
-	position: absolute;
-	width: 800px;
-	height: 450px;
-	padding-top: 22px;
-	padding-left: 10px;
-	padding-right: 10px;
-	background-color: white;
-	border: 1px solid #d8e298;
-	z-index: 100;
-	font-family: Courier;
-	font-size: 14px;
-	color: black;
+    position: absolute;
+    width: 800px;
+    height: 450px;
+    padding-top: 22px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: white;
+    border: 1px solid #d8e298;
+    z-index: 100;
+    font-family: Courier;
+    font-size: 14px;
+    color: black;
 }
 
 #editor_lightbox_close {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: 110;
-	width: 36px;
-	height: 36px;
-	background-image: url(/img/administration/close.png);
-	background-repeat: no-repeat;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 110;
+    width: 36px;
+    height: 36px;
+    background-image: url(/img/administration/close.png);
+    background-repeat: no-repeat;
 }
 
 #editor_filemanager {
-	font-family: Verdana;
-	font-size: 13px;
-	color: black;
+    font-family: Verdana;
+    font-size: 13px;
+    color: black;
 }
 
 #editor_filelist {
@@ -549,29 +549,29 @@ img.toolbar {
 }
 
 #editor_filemanager_leftcolumn {
-	position: absolute;
-	left: 10px;
-	top: 10px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
 
-	width: 450px;
-	height: 600px;
-	z-index: 200;
+    width: 450px;
+    height: 600px;
+    z-index: 200;
 }
 
 #editor_filemanager_rightcolumn {
-	position: absolute;
-	left: 470px;
-	top: 10px;
+    position: absolute;
+    left: 470px;
+    top: 10px;
 
-	width: 320px;
-	height: 600px;
-	z-index: 210;
+    width: 320px;
+    height: 600px;
+    z-index: 210;
 }
 
 .editor_input {
-	font-family: Verdana;
-	font-size: 13px;
-	color: black;
+    font-family: Verdana;
+    font-size: 13px;
+    color: black;
 
-	border: 1px solid black;
+    border: 1px solid black;
 }

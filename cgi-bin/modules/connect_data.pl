@@ -7,7 +7,7 @@ sub GetConnectData {
     my $mysql_password_db = '1234567890';
     my $mysql_base_name = 'izemskov';
     my $mysql_host_url = 'localhost';
-    
+
     return ($mysql_user_db, $mysql_password_db, $mysql_base_name, $mysql_host_url);
 }
 

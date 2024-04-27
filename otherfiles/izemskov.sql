@@ -1,8 +1,8 @@
--- MySQL dump 10.11
+-- MySQL dump 10.14  Distrib 5.5.68-MariaDB, for Linux (x86_64)
 --
 -- Host: localhost    Database: izemskov
 -- ------------------------------------------------------
--- Server version	5.0.95
+-- Server version	5.5.68-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,13 +23,13 @@ DROP TABLE IF EXISTS `izemskov_captcha`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_captcha` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `string` varchar(255) NOT NULL,
   `md5` varchar(255) NOT NULL,
   `create_time` bigint(20) unsigned NOT NULL,
-  PRIMARY KEY  (`id`),
+  PRIMARY KEY (`id`),
   KEY `ind_md5` (`md5`)
-) ENGINE=MyISAM AUTO_INCREMENT=1383 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1420 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +38,7 @@ CREATE TABLE `izemskov_captcha` (
 
 LOCK TABLES `izemskov_captcha` WRITE;
 /*!40000 ALTER TABLE `izemskov_captcha` DISABLE KEYS */;
+INSERT INTO `izemskov_captcha` VALUES (1419,'syokcz','655856773341a44a6878eced6b5a50a7',1714206520),(1418,'qc5fu0','1c6dc5beb266206727a5a9ddcb5f9a37',1714206512),(1417,'5o9199','df8fb65da547830d202938e964a6b661',1714206511);
 /*!40000 ALTER TABLE `izemskov_captcha` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -49,13 +50,13 @@ DROP TABLE IF EXISTS `izemskov_cms_access`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_cms_access` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `uid` int(10) unsigned NOT NULL,
   `modul_id` int(10) unsigned NOT NULL,
-  `access_add` enum('yes','no') NOT NULL default 'no',
-  `access_edit` enum('yes','no') NOT NULL default 'no',
-  `access_delete` enum('yes','no') NOT NULL default 'no',
-  PRIMARY KEY  (`id`)
+  `access_add` enum('yes','no') NOT NULL DEFAULT 'no',
+  `access_edit` enum('yes','no') NOT NULL DEFAULT 'no',
+  `access_delete` enum('yes','no') NOT NULL DEFAULT 'no',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -65,7 +66,7 @@ CREATE TABLE `izemskov_cms_access` (
 
 LOCK TABLES `izemskov_cms_access` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_access` DISABLE KEYS */;
-INSERT INTO `izemskov_cms_access` VALUES (1,1,2,'yes','yes','yes'),(2,1,38,'yes','yes','yes'),(5,1,43,'yes','yes','yes'),(6,1,46,'yes','yes','yes'),(7,1,47,'yes','yes','yes'),(8,1,49,'yes','yes','yes'),(16,1,3,'yes','yes','yes'),(18,1,51,'yes','yes','yes'),(23,1,56,'yes','yes','yes'),(22,1,54,'yes','yes','yes');
+INSERT INTO `izemskov_cms_access` VALUES (1,1,2,'yes','yes','yes'),(2,1,38,'yes','yes','yes'),(5,1,43,'yes','yes','yes'),(6,1,46,'yes','yes','yes'),(7,1,47,'yes','yes','yes'),(8,1,49,'yes','yes','yes'),(16,1,3,'yes','yes','yes'),(18,1,51,'yes','yes','yes'),(22,1,54,'yes','yes','yes');
 /*!40000 ALTER TABLE `izemskov_cms_access` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -77,14 +78,14 @@ DROP TABLE IF EXISTS `izemskov_cms_sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_cms_sessions` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `sess_id` varchar(255) NOT NULL,
   `sess_start_time` bigint(20) unsigned NOT NULL,
   `sess_time` bigint(20) unsigned NOT NULL,
-  `uid` int(11) default '-1',
-  `token` varchar(255) default NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=202 DEFAULT CHARSET=utf8;
+  `uid` int(11) DEFAULT '-1',
+  `token` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=222 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,6 +94,7 @@ CREATE TABLE `izemskov_cms_sessions` (
 
 LOCK TABLES `izemskov_cms_sessions` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_sessions` DISABLE KEYS */;
+INSERT INTO `izemskov_cms_sessions` VALUES (221,'9961c62eee7c397c7d26b2051016dd49',1714146841,1714206520,-1,'');
 /*!40000 ALTER TABLE `izemskov_cms_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -104,11 +106,11 @@ DROP TABLE IF EXISTS `izemskov_cms_sessions_log`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_cms_sessions_log` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `login_time` bigint(20) unsigned NOT NULL,
-  `uid` int(11) default '-1',
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=118 DEFAULT CHARSET=utf8;
+  `uid` int(11) DEFAULT '-1',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +119,7 @@ CREATE TABLE `izemskov_cms_sessions_log` (
 
 LOCK TABLES `izemskov_cms_sessions_log` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_sessions_log` DISABLE KEYS */;
-INSERT INTO `izemskov_cms_sessions_log` VALUES (116,1454429115,1),(115,1454343987,1),(114,1454340809,1),(113,1454329502,1),(117,1454672277,1),(69,1424445139,1),(70,1432380111,1),(71,1432412765,1),(72,1432422378,2),(73,1432422398,1),(74,1432422431,2),(75,1432466538,2),(76,1432474023,2),(77,1432474282,2),(78,1444477100,1),(79,1444513215,1),(80,1444577043,1),(81,1444577614,1),(82,1444663035,1),(83,1445245720,1),(84,1449672363,1),(85,1449676850,1),(86,1449736885,1),(87,1449760674,1),(88,1450021947,1),(89,1450081049,1),(90,1450096899,1),(91,1450167268,1),(92,1450181088,1),(93,1450255054,1),(94,1450267353,1),(95,1450280264,1),(96,1450341587,1),(97,1450430271,1),(98,1450707619,1),(99,1450855076,1),(100,1450884073,1),(101,1451062586,1),(102,1451312296,1),(103,1451387065,1),(104,1451472632,1),(105,1452014703,1),(106,1452174507,1),(107,1452427822,1),(108,1452673542,1),(109,1453463703,1),(110,1453810239,1),(111,1454061279,1),(112,1454082204,1);
+INSERT INTO `izemskov_cms_sessions_log` VALUES (118,1714147010,1),(119,1714147518,1),(120,1714147529,1);
 /*!40000 ALTER TABLE `izemskov_cms_sessions_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -129,12 +131,12 @@ DROP TABLE IF EXISTS `izemskov_cms_settings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_cms_settings` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `group` varchar(255) NOT NULL,
   `translitname` varchar(255) NOT NULL,
   `value` text,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -156,14 +158,14 @@ DROP TABLE IF EXISTS `izemskov_cms_struct`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_cms_struct` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL,
   `name` varchar(255) NOT NULL,
   `modul` varchar(255) NOT NULL,
-  `sub_modul` varchar(255) default NULL,
-  `order_content` int(11) default NULL,
-  `picture` varchar(255) default NULL,
-  PRIMARY KEY  (`id`)
+  `sub_modul` varchar(255) DEFAULT NULL,
+  `order_content` int(11) DEFAULT NULL,
+  `picture` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -173,7 +175,7 @@ CREATE TABLE `izemskov_cms_struct` (
 
 LOCK TABLES `izemskov_cms_struct` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_struct` DISABLE KEYS */;
-INSERT INTO `izemskov_cms_struct` VALUES (1,0,'CMS','cms','cms',1,NULL),(2,1,'Модули','cms','moduls',1,'moduls.jpg'),(3,1,'Пользователи','cms','users',2,'users.jpg'),(37,0,'Информация на сайте','text','text',10,NULL),(38,37,'Текстовые разделы','text','content',11,'folder.jpg'),(42,0,'SEO','seo','seo',30,NULL),(43,42,'Заголовки страниц','seo','titles',1,'titles.jpg'),(46,37,'Файл менеджер','text','filemanager',30,'filemanager.jpg'),(47,48,'Настройки','basic','settings',1,'settings.jpg'),(48,0,'Базовые настройки','basic','basic',5,NULL),(49,48,'Языки','basic','languages',10,'languages.jpg'),(51,37,'Каталог','text','catalog',30,'galery.jpg'),(53,0,'Сообщения','messages','messages',20,NULL),(54,53,'Обратная связь','messages','sendmail',1,'sendmail.jpg'),(55,0,'Аудиоигры','audiogames','games',40,NULL),(56,55,'Аудиоигры','audiogames','audiogames',1,'audiogames.jpg');
+INSERT INTO `izemskov_cms_struct` VALUES (1,0,'CMS','cms','cms',1,NULL),(2,1,'Модули','cms','moduls',1,'moduls.jpg'),(3,1,'Пользователи','cms','users',2,'users.jpg'),(37,0,'Информация на сайте','text','text',10,NULL),(38,37,'Текстовые разделы','text','content',11,'folder.jpg'),(42,0,'SEO','seo','seo',30,NULL),(43,42,'Заголовки страниц','seo','titles',1,'titles.jpg'),(46,37,'Файл менеджер','text','filemanager',30,'filemanager.jpg'),(47,48,'Настройки','basic','settings',1,'settings.jpg'),(48,0,'Базовые настройки','basic','basic',5,NULL),(49,48,'Языки','basic','languages',10,'languages.jpg'),(51,37,'Каталог','text','catalog',30,'galery.jpg'),(53,0,'Сообщения','messages','messages',20,NULL),(54,53,'Обратная связь','messages','sendmail',1,'sendmail.jpg');
 /*!40000 ALTER TABLE `izemskov_cms_struct` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,11 +187,11 @@ DROP TABLE IF EXISTS `izemskov_cms_users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_cms_users` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `login` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
-  `email` varchar(255) default NULL,
-  PRIMARY KEY  (`id`)
+  `email` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -199,7 +201,7 @@ CREATE TABLE `izemskov_cms_users` (
 
 LOCK TABLES `izemskov_cms_users` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_users` DISABLE KEYS */;
-INSERT INTO `izemskov_cms_users` VALUES (1,'root','d9d7ea957f1672d6cacb396c90a8029f3f335814b41514','pascal.ilya@gmail.com');
+INSERT INTO `izemskov_cms_users` VALUES (1,'root','1507d62bb83ae629869e1b93a39fc68175f83b0503fa88f43feaf7fbb1ac906e','pascal.ilya@gmail.com');
 /*!40000 ALTER TABLE `izemskov_cms_users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,11 +213,11 @@ DROP TABLE IF EXISTS `izemskov_languages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_languages` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
-  `picture` varchar(255) default NULL,
+  `picture` varchar(255) DEFAULT NULL,
   `order_content` int(11) NOT NULL,
-  PRIMARY KEY  (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -237,9 +239,9 @@ DROP TABLE IF EXISTS `izemskov_languages_fields`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_languages_fields` (
-  `id` int(10) unsigned NOT NULL auto_increment,
-  `comment` varchar(255) default NULL,
-  PRIMARY KEY  (`id`)
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `comment` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=664 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -261,11 +263,11 @@ DROP TABLE IF EXISTS `izemskov_languages_values`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_languages_values` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `parent_id` int(10) unsigned NOT NULL,
   `lang_id` int(10) unsigned NOT NULL,
   `value` text,
-  PRIMARY KEY  (`id`),
+  PRIMARY KEY (`id`),
   KEY `ind_lang_id` (`lang_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1255 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -288,12 +290,12 @@ DROP TABLE IF EXISTS `izemskov_messages_sendmail`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_messages_sendmail` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(255) NOT NULL,
   `message` text NOT NULL,
   `mess_date` int(10) unsigned NOT NULL,
-  `readed` enum('yes','no') NOT NULL default 'no',
-  PRIMARY KEY  (`id`)
+  `readed` enum('yes','no') NOT NULL DEFAULT 'no',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=65 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -315,13 +317,13 @@ DROP TABLE IF EXISTS `izemskov_seo_titles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_seo_titles` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `translitname` varchar(255) NOT NULL,
-  `meta_title` int(11) default NULL,
-  `meta_description` int(10) unsigned default NULL,
-  `meta_keywords` int(10) unsigned default NULL,
-  PRIMARY KEY  (`id`),
+  `meta_title` int(11) DEFAULT NULL,
+  `meta_description` int(10) unsigned DEFAULT NULL,
+  `meta_keywords` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `ind_translitname` (`translitname`)
 ) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -344,12 +346,12 @@ DROP TABLE IF EXISTS `izemskov_settings`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_settings` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `settings_group` varchar(255) NOT NULL,
   `translitname` varchar(255) NOT NULL,
-  `value` int(11) default NULL,
-  PRIMARY KEY  (`id`)
+  `value` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -371,17 +373,17 @@ DROP TABLE IF EXISTS `izemskov_text_catalog_items`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_text_catalog_items` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` int(11) NOT NULL,
   `catalog_id` int(10) unsigned NOT NULL,
   `filename` varchar(255) NOT NULL,
   `order_content` int(11) NOT NULL,
-  `small_description` int(10) unsigned default NULL,
-  `description` int(10) unsigned default NULL,
-  `meta_title` int(10) unsigned default NULL,
-  `meta_description` int(10) unsigned default NULL,
-  `meta_keywords` int(10) unsigned default NULL,
-  PRIMARY KEY  (`id`)
+  `small_description` int(10) unsigned DEFAULT NULL,
+  `description` int(10) unsigned DEFAULT NULL,
+  `meta_title` int(10) unsigned DEFAULT NULL,
+  `meta_description` int(10) unsigned DEFAULT NULL,
+  `meta_keywords` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=505 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -403,11 +405,11 @@ DROP TABLE IF EXISTS `izemskov_text_catalogs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_text_catalogs` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` int(11) NOT NULL,
   `order_content` int(11) NOT NULL,
-  `description` int(10) unsigned default NULL,
-  PRIMARY KEY  (`id`)
+  `description` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=500 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -429,18 +431,17 @@ DROP TABLE IF EXISTS `izemskov_text_content`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_text_content` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` int(10) unsigned NOT NULL,
-  `fullname` int(10) unsigned default NULL,
-  `symbol_link` varchar(255) default NULL,
+  `fullname` int(10) unsigned DEFAULT NULL,
+  `symbol_link` varchar(255) DEFAULT NULL,
   `parent_id` int(10) unsigned NOT NULL,
-  `content` int(10) unsigned default NULL,
+  `content` int(10) unsigned DEFAULT NULL,
   `order_content` int(10) unsigned NOT NULL,
-  `meta_title` int(10) unsigned default NULL,
-  `meta_description` int(10) unsigned default NULL,
-  `meta_keywords` int(10) unsigned default NULL,
-  `count_visits` bigint(20) unsigned default '0',
-  PRIMARY KEY  (`id`),
+  `meta_title` int(10) unsigned DEFAULT NULL,
+  `meta_description` int(10) unsigned DEFAULT NULL,
+  `meta_keywords` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `ind_symbol_link` (`symbol_link`),
   KEY `ind_parent_id` (`parent_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
@@ -452,7 +453,7 @@ CREATE TABLE `izemskov_text_content` (
 
 LOCK TABLES `izemskov_text_content` WRITE;
 /*!40000 ALTER TABLE `izemskov_text_content` DISABLE KEYS */;
-INSERT INTO `izemskov_text_content` VALUES (16,85,86,'main',0,87,1,88,89,90,2294),(23,152,153,'contacts',0,154,50,155,156,157,119),(43,652,653,'donate',0,654,100,655,656,657,102);
+INSERT INTO `izemskov_text_content` VALUES (16,85,86,'main',0,87,1,88,89,90),(23,152,153,'contacts',0,154,50,155,156,157),(43,652,653,'donate',0,654,100,655,656,657);
 /*!40000 ALTER TABLE `izemskov_text_content` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -464,10 +465,10 @@ DROP TABLE IF EXISTS `izemskov_text_editor_files`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `izemskov_text_editor_files` (
-  `id` int(10) unsigned NOT NULL auto_increment,
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `filename` varchar(255) NOT NULL,
-  `type` varchar(255) NOT NULL default 'images',
-  PRIMARY KEY  (`id`)
+  `type` varchar(255) NOT NULL DEFAULT 'images',
+  PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -490,4 +491,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-02-07  3:14:07
+-- Dump completed on 2024-04-27 11:29:34

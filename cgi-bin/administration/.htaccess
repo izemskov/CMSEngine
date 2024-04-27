@@ -1,0 +1,7 @@
+AddDefaultCharset utf-8
+
+#RewriteBase /
+#RewriteEngine on
+#Options +FollowSymlinks
+#RewriteCond %{HTTPS} off
+#RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI}

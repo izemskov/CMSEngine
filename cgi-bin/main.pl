@@ -12,7 +12,7 @@ print "Content-type: text/html\n\n";
 our $CGIBIN_PATH = '';
 our $HTDOCS_PATH = '';
 our $CGIBIN_REL_PATH = '';
-our $LOG_PATH = '';	
+our $LOG_PATH = '';
 our $SALT = '';
 
 # Получаем пути для сайта
@@ -48,7 +48,7 @@ if ($lang_id ne '') {
         -value => "$lang_id",
         -expires => '+3M'
     );
-    print qq{<META HTTP-EQUIV="Set-Cookie" CONTENT="$Cookie">};	
+    print qq{<META HTTP-EQUIV="Set-Cookie" CONTENT="$Cookie">};
 }
 
 our $ACCESS = 'no';
@@ -101,7 +101,7 @@ elsif ($MOD eq 'audiogames') {
     }
     require "audiogames.pl";
 }
-else {	
+else {
     $MOD = 'index';
     require "index.pl";
 }
@@ -138,28 +138,28 @@ sub GetCMSSettings {
 
 sub DefaultModulMetaTag {
     my ($Count) = $DWDB->QuerySelectRowDB(qq{SELECT count(*) FROM }.$DWDB->GetMysqlTableName.qq{seo_titles WHERE translitname=?}, $MOD);
-    
+
     if ($Count > 0) {
         ($META_TITLE, $META_DESCRIPTION, $META_KEYWORDS) = $DWDB->QuerySelectRowDB(qq{
-SELECT 
-    meta_title, meta_description, meta_keywords 
-FROM 
-    }.$DWDB->GetMysqlTableName.qq{seo_titles 
-WHERE 
+SELECT
+    meta_title, meta_description, meta_keywords
+FROM
+    }.$DWDB->GetMysqlTableName.qq{seo_titles
+WHERE
     translitname=?
         }, $MOD);
     }
     else {
         ($META_TITLE, $META_DESCRIPTION, $META_KEYWORDS) = $DWDB->QuerySelectRowDB(qq{
-SELECT 
-    meta_title, meta_description, meta_keywords 
-FROM 
-    }.$DWDB->GetMysqlTableName.qq{seo_titles 
-WHERE 
+SELECT
+    meta_title, meta_description, meta_keywords
+FROM
+    }.$DWDB->GetMysqlTableName.qq{seo_titles
+WHERE
     translitname='default'
         });
     }
-    
+
     if ($META_TITLE ne '') {
         $META_TITLE = $LANGUAGES_HASH{$META_TITLE};
     }
@@ -173,11 +173,11 @@ WHERE
 
 sub GetMainName {
     ($MAIN_NAME) = $DWDB->QuerySelectRowDB(qq{SELECT name FROM }.$DWDB->GetMysqlTableName.qq{text_content WHERE parent_id='0' ORDER BY order_content LIMIT 1});
-    
+
     if ($MAIN_NAME ne '') {
         $MAIN_NAME = $LANGUAGES_HASH{$MAIN_NAME};
     }
-    
+
     if ($MAIN_NAME eq '') {
         $MAIN_NAME = "Главная";
     }

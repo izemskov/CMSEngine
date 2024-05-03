@@ -38,22 +38,6 @@ our $DWFilter = DWFilter->new();
 our $LANGUAGE_ID = '';
 our %LANGUAGES_HASH = ();
 
-# TODO
-my $lang_id = $DWFilter->GetParamFilterDiget("lang_id");
-if ($lang_id ne '') {
-    use CGI::Cookie;
-
-    my $Cookie = CGI::Cookie->new(
-        -name => 'language_id',
-        -value => "$lang_id",
-        -expires => '+3M'
-    );
-    print qq{<META HTTP-EQUIV="Set-Cookie" CONTENT="$Cookie">};
-}
-
-our $ACCESS = 'no';
-our $ACCESS_UID = -1;
-
 our $MAIN_LINK = "$CGIBIN_REL_PATH/main.pl";
 
 our %SITE_SETTINGS = ();
@@ -68,38 +52,22 @@ our $MAIN_NAME = '';
 our $MOD = $DWFilter->GetParamFilterLatinDiget("mod");
 my $UID = $DWFilter->GetParamFilterDiget("uid");
 
-if ($MOD ne 'audiogames') {
-    print "<!DOCTYPE html>\n";
-}
-
 # Подключение функциональных модулей
 require "templates.pl";
 require "functions.pl";
 require "languages.pl";
 require "editor.pl";
-require "access.pl";
 
 &GetSiteSettings;
 &GetCMSSettings;
 &DefaultModulMetaTag;
 &GetMainName;
 
-if ($UID ne '' && $MOD eq '') {
-    &AuthVK;
-    $MOD = 'index';
-    require "index.pl";
-}
-elsif ($MOD eq 'content') {
+if ($MOD eq 'content') {
     require "content.pl";
 }
 elsif ($MOD eq 'catalog') {
     require "catalog.pl";
-}
-elsif ($MOD eq 'audiogames') {
-    if ($UID ne '') {
-        &AuthVK;
-    }
-    require "audiogames.pl";
 }
 else {
     $MOD = 'index';

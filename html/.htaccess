@@ -1,0 +1,18 @@
+AddDefaultCharset utf-8
+
+RewriteBase /
+RewriteEngine on
+Options +FollowSymlinks
+
+DirectoryIndex /cgi-bin/main.pl
+
+RewriteRule ^content$ /cgi-bin/main.pl?mod=content [L] 
+RewriteRule ^content/$ /cgi-bin/main.pl?mod=content [L] 
+RewriteRule ^content/(.*)/$ /cgi-bin/main.pl?mod=content&symbol_link=$1 [L] 
+RewriteRule ^content/(.*).html$ /cgi-bin/main.pl?mod=content&content_id=$1 [L]
+
+RewriteRule ^catalog$ /cgi-bin/main.pl?mod=catalog [L]
+RewriteRule ^catalog/$ /cgi-bin/main.pl?mod=catalog [L]
+RewriteRule ^catalog/(.*).html$ /cgi-bin/main.pl?mod=catalog&content_id=$1 [L]
+
+

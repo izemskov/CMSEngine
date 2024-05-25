@@ -51,10 +51,10 @@ sub QueryDoDB {
 
     if ($self->IsConnect() eq 'yes') {
         if (@_) {
-            $self->{_DBH}->do($sql, undef, @_);
+            $self->{_DBH}->do($sql, undef, @_) or die 'Cannot execute query';
         }
         else {
-            $self->{_DBH}->do($sql);
+            $self->{_DBH}->do($sql) or die 'Cannot execute query';
         }
         $self->{_COUNT_QUERY_DB}++;
         $self->CheckErrorDB($self->{_STOP_SCRIPT});

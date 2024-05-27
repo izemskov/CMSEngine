@@ -29,7 +29,7 @@ CREATE TABLE `izemskov_captcha` (
   `create_time` bigint(20) unsigned NOT NULL,
   PRIMARY KEY (`id`),
   KEY `ind_md5` (`md5`)
-) ENGINE=MyISAM AUTO_INCREMENT=1420 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=1427 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,6 @@ CREATE TABLE `izemskov_captcha` (
 
 LOCK TABLES `izemskov_captcha` WRITE;
 /*!40000 ALTER TABLE `izemskov_captcha` DISABLE KEYS */;
-INSERT INTO `izemskov_captcha` VALUES (1419,'syokcz','655856773341a44a6878eced6b5a50a7',1714206520),(1418,'qc5fu0','1c6dc5beb266206727a5a9ddcb5f9a37',1714206512),(1417,'5o9199','df8fb65da547830d202938e964a6b661',1714206511);
 /*!40000 ALTER TABLE `izemskov_captcha` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +84,7 @@ CREATE TABLE `izemskov_cms_sessions` (
   `uid` int(11) DEFAULT '-1',
   `token` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=222 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=227 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,7 +93,6 @@ CREATE TABLE `izemskov_cms_sessions` (
 
 LOCK TABLES `izemskov_cms_sessions` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_sessions` DISABLE KEYS */;
-INSERT INTO `izemskov_cms_sessions` VALUES (221,'9961c62eee7c397c7d26b2051016dd49',1714146841,1714209982,1,'a729aec564c58c87beb702be2efe6d88');
 /*!40000 ALTER TABLE `izemskov_cms_sessions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -110,7 +108,7 @@ CREATE TABLE `izemskov_cms_sessions_log` (
   `login_time` bigint(20) unsigned NOT NULL,
   `uid` int(11) DEFAULT '-1',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=122 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=126 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -119,7 +117,6 @@ CREATE TABLE `izemskov_cms_sessions_log` (
 
 LOCK TABLES `izemskov_cms_sessions_log` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_sessions_log` DISABLE KEYS */;
-INSERT INTO `izemskov_cms_sessions_log` VALUES (121,1714206608,1),(118,1714147010,1),(119,1714147518,1),(120,1714147529,1);
 /*!40000 ALTER TABLE `izemskov_cms_sessions_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +143,6 @@ CREATE TABLE `izemskov_cms_settings` (
 
 LOCK TABLES `izemskov_cms_settings` WRITE;
 /*!40000 ALTER TABLE `izemskov_cms_settings` DISABLE KEYS */;
-INSERT INTO `izemskov_cms_settings` VALUES (1,'E-mail сервера','Сообщения','server_email','sendmail@chormiet.ru'),(2,'Статистика google','SEO','googleanalytics','<script type=\"text/javascript\">\r\n\r\n  var _gaq = _gaq || [];\r\n  _gaq.push([\'_setAccount\', \'UA-47476441-1\']);\r\n  _gaq.push([\'_setDomainName\', \'chormiet.ru\']);\r\n  _gaq.push([\'_trackPageview\']);\r\n\r\n  (function() {\r\n    var ga = document.createElement(\'script\'); ga.type = \'text/javascript\'; ga.async = true;\r\n    ga.src = (\'https:\' == document.location.protocol ? \'https://ssl\' : \'http://www\') + \'.google-analytics.com/ga.js\';\r\n    var s = document.getElementsByTagName(\'script\')[0]; s.parentNode.insertBefore(ga, s);\r\n  })();\r\n\r\n</script>');
 /*!40000 ALTER TABLE `izemskov_cms_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -242,7 +238,7 @@ CREATE TABLE `izemskov_languages_fields` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `comment` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -251,6 +247,7 @@ CREATE TABLE `izemskov_languages_fields` (
 
 LOCK TABLES `izemskov_languages_fields` WRITE;
 /*!40000 ALTER TABLE `izemskov_languages_fields` DISABLE KEYS */;
+INSERT INTO `izemskov_languages_fields` VALUES (18,''),(17,''),(16,''),(15,''),(14,''),(13,''),(19,''),(20,''),(21,''),(22,''),(23,''),(24,''),(25,''),(26,'');
 /*!40000 ALTER TABLE `izemskov_languages_fields` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -268,7 +265,7 @@ CREATE TABLE `izemskov_languages_values` (
   `value` text,
   PRIMARY KEY (`id`),
   KEY `ind_lang_id` (`lang_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -277,6 +274,7 @@ CREATE TABLE `izemskov_languages_values` (
 
 LOCK TABLES `izemskov_languages_values` WRITE;
 /*!40000 ALTER TABLE `izemskov_languages_values` DISABLE KEYS */;
+INSERT INTO `izemskov_languages_values` VALUES (15,15,1,'Если у Вас есть вопросы или предложения по развитию проекта, Вы можете связаться со мной заполнив форму ниже.'),(14,14,1,'test@test.com'),(13,13,1,'Написать нам'),(16,16,1,'Спасибо! Я отвечу Вам в ближайшее время'),(17,17,1,'site.ru 2015'),(18,18,1,'Заголовок страницы'),(19,19,1,'Описание страницы'),(20,20,1,'Ключевые слова'),(21,21,1,'Заголовок страницы'),(22,22,1,'Описание страницы'),(23,23,1,'Ключевые слова'),(24,24,1,'Заголовок страницы'),(25,25,1,'Описание страницы'),(26,26,1,'Ключевые слова');
 /*!40000 ALTER TABLE `izemskov_languages_values` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -303,7 +301,6 @@ CREATE TABLE `izemskov_messages_sendmail` (
 
 LOCK TABLES `izemskov_messages_sendmail` WRITE;
 /*!40000 ALTER TABLE `izemskov_messages_sendmail` DISABLE KEYS */;
-INSERT INTO `izemskov_messages_sendmail` VALUES (64,'0zx1@mail.ru','Вы не забросили еще сайт? Сделайте книги без скачивания т.е. онлайн, и озвучка живым голосом. Возможно если написать на главной, что Вы ищите тех, кто поможет бесплатно озвучить и тех кто предоставит свои интерактив. книги, то кто-то нормальный найдется. У вас сайт в поиске сразу на 1-й странице, в отличие от iabooks.ru так что если выкладывать качественный контент удобный для прослушивания, то все будет в шоколаде',1454043801,'yes');
 /*!40000 ALTER TABLE `izemskov_messages_sendmail` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -323,7 +320,7 @@ CREATE TABLE `izemskov_seo_titles` (
   `meta_keywords` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ind_translitname` (`translitname`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -332,6 +329,7 @@ CREATE TABLE `izemskov_seo_titles` (
 
 LOCK TABLES `izemskov_seo_titles` WRITE;
 /*!40000 ALTER TABLE `izemskov_seo_titles` DISABLE KEYS */;
+INSERT INTO `izemskov_seo_titles` VALUES (9,'По-умолчанию','default',21,22,23),(8,'Текстовые разделы','content',18,19,20),(10,'Обратная связь','sendmail',24,25,26);
 /*!40000 ALTER TABLE `izemskov_seo_titles` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,7 +347,7 @@ CREATE TABLE `izemskov_settings` (
   `translitname` varchar(255) NOT NULL,
   `value` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -358,6 +356,7 @@ CREATE TABLE `izemskov_settings` (
 
 LOCK TABLES `izemskov_settings` WRITE;
 /*!40000 ALTER TABLE `izemskov_settings` DISABLE KEYS */;
+INSERT INTO `izemskov_settings` VALUES (19,'Заголовок обратной связи','Обратная связь','sendmail_name',13),(20,'Почтовый ящик администратора','Обратная связь','email_sendmail',14),(21,'Текст перед отправкой','Обратная связь','sendmail_text_before',15),(22,'Текст после отправки','Обратная связь','sendmail_text_after',16),(23,'Текст копирайта','Разное','copyright_text',17);
 /*!40000 ALTER TABLE `izemskov_settings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -438,7 +437,7 @@ CREATE TABLE `izemskov_text_content` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ind_symbol_link` (`symbol_link`),
   KEY `ind_parent_id` (`parent_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=45 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=49 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -483,4 +482,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-27 12:27:31
+-- Dump completed on 2024-05-27 14:06:33

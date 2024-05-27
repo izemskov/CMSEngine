@@ -84,14 +84,14 @@ sub Content {
         }
 
         $SubContentText .= qq{
-        <li><a href='$Link'>$LANGUAGES_HASH{$SubContent->{name}}</a></li>
+        <li class="list-group-item"><a href='$Link'>$LANGUAGES_HASH{$SubContent->{name}}</a></li>
         };
     }
     $sth->finish();
 
     if ($SubContentText ne '') {
         $ReturnText .= qq{
-<ul>
+<ul class="list-group">
 $SubContentText
 </ul>
         };

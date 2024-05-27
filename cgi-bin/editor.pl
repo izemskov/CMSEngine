@@ -37,6 +37,7 @@ sub DecodeEditorText {
 
     # Link
     $text =~ s/\[a href=(.*?)\]/<a href=\'$1\'>/igs;
+    $text =~ s/\[a target=_blank href=(.*?)\]/<a href=\'$1\' target='_blank'>/igs;
     $text =~ s/\[a class=(.*?) href=(.*?)\]/<a class=\'$1\' href=\'$2\'>/igs;
     $text =~ s/\[\/a\]/<\/a>/ig;
 

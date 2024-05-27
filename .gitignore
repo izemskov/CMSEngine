@@ -37,3 +37,5 @@ inc/
 logs/*
 
 .vscode
+
+html/user_files

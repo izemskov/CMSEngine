@@ -1,4 +1,5 @@
-$(document).ready(
+// TODO
+/*$(document).ready(
     function () {
         $('.fancybox').fancybox({
             autoCenter: false,
@@ -9,4 +10,4 @@ $(document).ready(
             }
         });
     }
-);
+);*/

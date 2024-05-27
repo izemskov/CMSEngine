@@ -69,7 +69,7 @@ sub Content {
     my $ReturnText = '';
 
     $ReturnText .= qq{
-<h1>$Content->{fullname}</h1>
+<h1 class="display-5">$Content->{fullname}</h1>
     };
 
     my $SubContentText = '';
@@ -97,8 +97,9 @@ $SubContentText
         };
     }
 
-    $ReturnText .= qq{<br>};
+    $ReturnText .= qq{<p class="h5">};
     $ReturnText .= &DecodeEditorText($Content->{content});
+    $ReturnText .= qq{</p>};
 
     return $ReturnText;
 }

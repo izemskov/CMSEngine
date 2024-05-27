@@ -21,12 +21,11 @@ sub TemplateTitle {
 
 <title>$META_TITLE</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="INDEX,FOLLOW">
 <meta name="revisit-after" content="1 days">
 <meta name="description" content="$META_DESCRIPTION">
 <meta name="keywords" content="$META_KEYWORDS">
-<meta name="author" content="">
     };
 
     return $ReturnText;
@@ -36,74 +35,27 @@ sub TemplateCSS {
     my $TemplateNumber = shift;
     my $ReturnText = '';
 
-    $ReturnText .= qq{
-    <!-- Le styles -->
-    <link href="/css/bootstrap.css" rel="stylesheet">
-    };
+    $ReturnText .= q{
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-    if ($TemplateNumber == 1) {
-        $ReturnText .= qq{
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-    </style>
-        };
-    }
-    elsif ($TemplateNumber == 2) {
-        $ReturnText .= qq{
-    <style type="text/css">
-        body {
-            padding-top: 60px;
-            padding-bottom: 40px;
-        }
-        .sidebar-nav {
-            padding: 9px 0;
-        }
-    </style>
-        };
-    }
-    else {
-        $ReturnText .= qq{
-    <style type="text/css">
-        body {
-            padding-top: 40px;
-            padding-bottom: 40px;
-            background-color: #f5f5f5;
-        }
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
 
-        .form-signin {
-            max-width: 300px;
-            padding: 19px 29px 29px;
-            margin: 0 auto 20px;
-            background-color: #fff;
-            border: 1px solid #e5e5e5;
-                -webkit-border-radius: 5px;
-                    -moz-border-radius: 5px;
-            border-radius: 5px;
-                -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-                    -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
-                        box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
         }
-        .form-signin .form-signin-heading,
-        .form-signin .checkbox {
-            margin-bottom: 10px;
-        }
-        .form-signin input[type="text"],
-        .form-signin input[type="password"] {
-            font-size: 16px;
-            height: auto;
-            margin-bottom: 15px;
-            padding: 7px 9px;
-        }
+      }
     </style>
-        };
-    }
 
-    $ReturnText .= qq{
-    <link href="/css/bootstrap-responsive.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css">
+    <link href="/css/jumbotron.css" rel="stylesheet">
     };
 
     return $ReturnText;
@@ -113,13 +65,9 @@ sub TemplateJS {
     my $ReturnText = '';
 
     $ReturnText .= qq{
-    <script src="/js/jquery-1.9.0.min.js"></script>
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/bootstrap-modal.js"></script>
-    <script type='text/javascript' src='/js/jquery.fancybox.js'></script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
     <script type='text/javascript' src='/js/design.js'></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
     };
 
     return $ReturnText;
@@ -144,76 +92,31 @@ sub TemplateMainHeader {
     $ReturnText .= &TemplateCSS($TemplateNumber);
 
 $ReturnText .= qq{
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 </head>
 
 <body>
     };
 
-    if ($TemplateNumber == 1) {
-        $ReturnText .= qq {
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="/">CMS</a>
-            <div class="nav-collapse collapse">
-        };
+    # TODO - $TemplateNumber not used now
+    $ReturnText .= qq {
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    };
 
-        $ReturnText .= &TemplateUpMenu;
+    $ReturnText .= &TemplateUpMenu;
 
-        $ReturnText .= qq {
-                <form class="navbar-form pull-right" action='/cgi-bin/main.pl'>
-                    <input type='hidden' name='mod' value='catalog'>
-                    <input class="span2" type="text" placeholder="Поиск">
-                    <button type="submit" class="btn">Найти</button>
-                </form>
-            </div><!--/.nav-collapse -->
+    $ReturnText .= qq {
         </div>
-    </div>
-</div>
+    </nav>
 
-    <div class="container">
-        <div class="hero-unit">
-        };
-    }
-    elsif ($TemplateNumber == 2) {
-        $ReturnText .= qq {
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            </a>
-            <a class="brand" href="/">CMS</a>
-            <div class="nav-collapse collapse">
-        };
-
-        $ReturnText .= &TemplateUpMenu;
-
-        $ReturnText .= qq {
-                <form class="navbar-form pull-right" action='/cgi-bin/main.pl'>
-                    <input type='hidden' name='mod' value='catalog'>
-                    <input class="span2" type="text" placeholder="Поиск">
-                    <button type="submit" class="btn">Найти</button>
-                </form>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div>
-</div>
-
-    <div class="container">
-        };
-    }
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+    };
 
     return $ReturnText;
 }
@@ -221,64 +124,15 @@ $ReturnText .= qq{
 sub TemplateMainFooter {
     my $TemplateNumber = shift;
 
-    if ($TemplateNumber eq '') {
-        $TemplateNumber = 1;
-    }
+    my $ReturnText .= qq{
+            </div>
+        </div>
+    </main>
 
-    my $ReturnText = '';
-
-    if ($TemplateNumber == 1) {
-        $ReturnText .= qq{
-    </div>
-        };
-
-        if ($MOD eq 'index') {
-            $ReturnText .= TemplateShowCase(" ORDER BY order_content LIMIT 3 ");
-
-            my ($Count) = $DWDB->QuerySelectRowDB(qq{SELECT count(*) FROM }.$DWDB->GetMysqlTableName.qq{text_catalog_items});
-            if ($Count > 3) {
-                $ReturnText .= qq{<br><a class="btn" href="/catalog/">Посмотреть весь каталог</a>};
-            }
-        }
-        elsif ($MOD eq 'content') {
-            # Check main page
-            my $SymbolLink = $DWFilter->GetParamFilterLatinDigetDash("symbol_link");
-            my $ContentID = $DWFilter->GetParamFilterDiget("content_id", 5);
-
-            # Get symbol link && id main page
-            my ($ContentIDDB, $SymbolLinkDB) = $DWDB->QuerySelectRowDB(qq{SELECT id, symbol_link FROM }.$DWDB->GetMysqlTableName.qq{text_content ORDER BY order_content LIMIT 1});
-
-            if ($SymbolLink eq $SymbolLinkDB || $ContentID == $ContentIDDB ) {
-                $ReturnText .= &TemplateShowCase(" ORDER BY order_content LIMIT 3 ");
-
-                my ($Count) = $DWDB->QuerySelectRowDB(qq{SELECT count(*) FROM }.$DWDB->GetMysqlTableName.qq{text_catalog_items});
-                if ($Count > 3) {
-                    $ReturnText .= qq{<br><a class="btn" href="/catalog/">Посмотреть весь каталог</a>};
-                }
-            }
-        }
-
-        $ReturnText .= qq{
-    <hr>
-
-    <footer>
-        <p>&copy; $LANGUAGES_HASH{$SITE_SETTINGS{copyright_text}}</p>
+    <footer class="container">
+        <p>&copy; izemskov.ru 2024</p>
     </footer>
-
-    </div> <!-- /container -->
-        };
-    }
-    elsif ($TemplateNumber == 2) {
-        $ReturnText .= qq{
-    <hr>
-
-    <footer>
-        <p>&copy; $LANGUAGES_HASH{$SITE_SETTINGS{copyright_text}}</p>
-    </footer>
-
-    </div> <!-- /container -->
-        };
-    }
+    };
 
     $ReturnText .= &TemplateJS();
 
@@ -294,20 +148,11 @@ sub TemplateUpMenu {
     my $ReturnText = '';
 
     $ReturnText .= qq{
-<ul class="nav">
+<ul class="navbar-nav mr-auto">
     };
 
-    my $i = 0;
     my $sth = $DWDB->QuerySelectPrepareDB(qq{SELECT * FROM }.$DWDB->GetMysqlTableName.qq{text_content WHERE parent_id='0' ORDER BY order_content});
     while (my $Content = $sth->fetchrow_hashref()) {
-        if ($i == 1) {
-            $ReturnText .= qq{
-    <li><a href="/catalog/">Каталог</a></li>
-            };
-
-            $i = $i + 2;
-        }
-
         my $Link = '';
         if ($Content->{symbol_link} ne '') {
             $Link = "/content/$Content->{symbol_link}/";
@@ -317,10 +162,10 @@ sub TemplateUpMenu {
         }
 
         $ReturnText .= qq{
-    <li><a href="$Link">$LANGUAGES_HASH{$Content->{name}}</a></li>
+    <li class="nav-item active">
+        <a class="nav-link" href="$Link">$LANGUAGES_HASH{$Content->{name}}</a>
+    </li>
         };
-
-        $i++;
     }
     $sth->finish();
 

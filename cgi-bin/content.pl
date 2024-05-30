@@ -97,9 +97,9 @@ $SubContentText
         };
     }
 
-    $ReturnText .= qq{<p class="h5">};
+    $ReturnText .= qq{<div class="h5">};
     $ReturnText .= &DecodeEditorText($Content->{content});
-    $ReturnText .= qq{</p>};
+    $ReturnText .= qq{</div>};
 
     return $ReturnText;
 }

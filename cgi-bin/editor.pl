@@ -53,6 +53,10 @@ sub DecodeEditorText {
     my $iframe = qq{<iframe frameborder="0" allowtransparency="true" scrolling="no" src="https://money.yandex.ru/embed/small.xml?account=41001617439814&quickpay=small&yamoney-payment-type=on&button-text=03&button-size=l&button-color=black&targets=%D0%9F%D0%BE%D0%BC%D0%BE%D1%89%D1%8C+%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D1%83&default-sum=10&successURL=" width="242" height="54"></iframe>};
     $text =~ s/\[donate\]/$iframe/igs;
 
+    # Pre tag (for bootstrap)
+    $text =~ s/\[code\]/<div class=\"container p-3 my-3 bg-dark text-white\">/ig;
+    $text =~ s/\[\/code\]/<\/div>/ig;
+
     return $text;
 }
 
